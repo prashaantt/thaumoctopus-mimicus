@@ -95,19 +95,18 @@ server.select('api').route({
         cors: true
     },
     handler: function (request, reply) {
-        
-        try {
-            
-        
-        connection.collection('counter').findOne((err, counter) => {
 
-            if (err) {
-                console.error(err);
-                return reply(err);
-            }
-            return reply(counter);
-        });
-        } catch (e) {
+        try {
+            connection.collection('counter').findOne((err, counter) => {
+
+                if (err) {
+                    console.error(err);
+                    return reply(err);
+                }
+                return reply(counter);
+            });
+        }
+        catch (e) {
             console.error(e);
         }
     }
