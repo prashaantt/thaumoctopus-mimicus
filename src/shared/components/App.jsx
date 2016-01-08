@@ -7,8 +7,8 @@ export default class App extends React.Component {
 
       return (
           <div id="app-view">
-            <h1><Link to="/">Todos</Link></h1>
-            <Link to="home">Home</Link> | <Link to="about">About</Link>
+            <h1><Link to="/">Isomorphic examples</Link></h1>
+            <Link to="todos">Todos</Link> | <Link to="counter">Counter</Link>
             <hr/>
             { this.props.children }
           </div>

@@ -6,7 +6,9 @@ export default class TodosForm extends React.Component {
 
         const node = this.refs['todo-input'];
 
-        this.props.createTodo(node.value);
+        const val = node.value;
+
+        this.props.createTodo(val);
 
         node.value = '';
     }

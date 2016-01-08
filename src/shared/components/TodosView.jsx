@@ -5,7 +5,7 @@ export default class TodosView extends React.Component {
     handleDelete(e) {
 
         const id = Number(e.target.dataset.id);
-        // Equivalent to `dispatch(deleteTodo())`
+
         this.props.deleteTodo(id);
     }
 
@@ -14,7 +14,6 @@ export default class TodosView extends React.Component {
         const id  = Number(e.target.dataset.id);
         const val = this.props.todos.get(id).text;
 
-        // For cutting edge UX
         const newVal = window.prompt('', val);
         this.props.editTodo(id, newVal);
     }
@@ -24,7 +23,7 @@ export default class TodosView extends React.Component {
         return (
             <div id="todo-list">
                 {
-                    this.props.todos.map( (todo, index) => {
+                    this.props.todos.map((todo, index) => {
 
                         return (
                             <div key={ index }>

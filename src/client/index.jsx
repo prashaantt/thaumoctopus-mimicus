@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React from 'react';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Provider } from 'react-redux';
@@ -14,17 +15,14 @@ import * as reducers from '../shared/reducers';
 const history = createBrowserHistory();
 
 
-let initialState = window.__INITIAL_STATE__;
-
-
-Object.keys(initialState).forEach((key) => {
-    initialState[key] = fromJS(initialState[key]);
-});
-
-
 const reducer = combineReducers(reducers);
-const store = createStore(reducer);
+const initialState = window.__INITIAL_STATE__;
+const store = createStore(reducer, initialState);
 
+// store.subscribe(() => {
+
+//     console.log(store.getState());
+// });
 
 render(
     <Provider store={ store }>

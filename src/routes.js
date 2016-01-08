@@ -1,18 +1,19 @@
-import { App, About, Home } from './shared/components';
+import { App, Counter, Home, Todos } from './shared/components';
 
 
 const routes = [
     {
         path: '/',
         component: App,
+        indexRoute: { component: Home },
         childRoutes: [
             {
-                path: 'home',
-                component: Home
+                path: 'todos',
+                component: Todos
             },
             {
-                path: 'about',
-                component: About
+                path: 'counter',
+                component: Counter
             }
         ]
     }

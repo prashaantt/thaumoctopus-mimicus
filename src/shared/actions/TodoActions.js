@@ -26,3 +26,13 @@ export const deleteTodo = (id) => {
         id
     };
 };
+
+
+export const listTodos = (text) => {
+
+    return {
+        type: 'LIST_TODOS',
+        text: text + 1,
+        date: Date.now()
+    };
+};

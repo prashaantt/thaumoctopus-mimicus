@@ -1,40 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
-
-import { TodosForm, TodosView } from '.';
-import * as TodoActions from '../actions/TodoActions';
-
-
-const mapStateToProps = (state) => {
-
-    return { todos: state.todos };
-};
 
 
 export default class Home extends React.Component {
     render() {
 
-        const { todos, dispatch } = this.props;
-
         return (
-            <div id="todo-list">
-                <Link to="about">About</Link>
-                <TodosView
-                    todos={ todos }
-                    { ...bindActionCreators(TodoActions, dispatch) }
-                />
-
-                <TodosForm
-                    { ...bindActionCreators(TodoActions, dispatch) }
-                />
-            </div>
+            <p>Try an example</p>
         );
     }
-};
-
-
-// @connect((state) => ({ todos: state.todos }))
-export default connect(mapStateToProps)(Home);
+}
